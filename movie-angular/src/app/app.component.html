@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Movie Angular</a>
+  <a class="navbar-brand" routerLink="/">Movie Angular</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMovie" aria-controls="navbarMovie" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,18 +7,24 @@
   <div class="collapse navbar-collapse" id="navbarMovie">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><app-home></app-home><span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"  role="button" aria-haspopup="true" aria-expanded="false">
-          <app-in-theaters></app-in-theaters>
+        <a class="nav-link" [routerLink]="['/intheaters']"  role="button" aria-haspopup="true" aria-expanded="false">
+          In Theaters
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link" href="#"  role="button" aria-haspopup="true" aria-expanded="false">
-          <app-on-tv></app-on-tv>
+        <a class="nav-link" [routerLink]="['/ontv']"  role="button" aria-haspopup="true" aria-expanded="false">
+          On TV
         </a>
       </li>
     </ul>
   </div>
 </nav>
+<!--body-->
+<div class="container">
+  <div class="row-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</div>
