@@ -5,10 +5,17 @@ import { HttpClient} from  '@angular/common/http';
   providedIn: 'root'
 })
 export class MoviesService {
-  apiBase: string;
-  apiKey: string;
-  constructor(private httpClient: HttpClient) {
-    this.apiBase = 'https://api.themoviedb.org/3/';
-    this.apiKey = ''; //use own key
+  API_URL = 'https://api.themoviedb.org/3/';
+  API_KEY = ''; //use own key
+
+  constructor(private httpClient: HttpClient) {}
+
+  getNowPlaying(page: number): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}movie/now_playing?api_key=${this.API_KEY}&page=${this.page}`);
   }
+
+  // getMovie(id: number): Observable<any> {
+  //   return this.httpClient.get(`${this.API_URL}movie/${id}?api_key=${this.API_KEY}`);
+  // }
+
 }

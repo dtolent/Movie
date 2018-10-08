@@ -1,1 +1,7 @@
-<a href="#">In Theaters</a>
+
+<h2>Now Playing</h2>
+<div *ngFor="let movie of movies">
+  <img style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+  <strong><div>{{movie.title}}</div></strong>
+  <div>{{movie.overview}}</div>
+</div>
