@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { MoviesService } from '../services/movies.service';
 
 @Component({
@@ -8,24 +10,26 @@ import { MoviesService } from '../services/movies.service';
 })
 export class InTheatersComponent implements OnInit {
 
-  private movies: Array<any> = [];
+  movies: Array<any> = [];
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService,
+              private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+
     this.getMovies();
-    // this.getDetails();
+
   }
+
   public getMovies() {
-    this.moviesService.getNowPlaying(1).subscribe((data: any) => {
+    this.moviesSub = this.moviesService.getNowPlaying(1).subscribe((data: any) => {
       this.movies = data.results;
     });
   }
 
-  // public getDetails() {
-  //   this.moviesService.getMovie(335983).subscribe((data: any) => {
-  //       console.log(data);
-  //   });
-  // }
+  ngOnDestroy() {
+    this.moviesSub.unsubscribe();
+  }
 
 }

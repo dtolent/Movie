@@ -1,7 +1,13 @@
-
+<body>
 <h2>Now Playing</h2>
-<div *ngFor="let movie of movies">
-  <img style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+<div [routerLink]="movie.id" *ngFor="let movie of movies" class="card" style="width:300px;" >
+  <img class="card-img-top" style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
   <strong><div>{{movie.title}}</div></strong>
-  <div>{{movie.overview}}</div>
+  <div>{{movie.release_date | date:'longDate' }}</div>
 </div>
+
+
+<!-- <app-movie *ngFor="let movie of movies; let i = index"
+            [index]="i"
+></app-movie> -->
+</body>

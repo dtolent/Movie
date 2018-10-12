@@ -11,12 +11,14 @@ import { UsersComponent } from './users/users.component';
 import { AllMoviesComponent } from './in-theaters/all-movies/all-movies.component';
 import { AllGenreComponent } from './in-theaters/all-genre/all-genre.component';
 import { MovieComponent } from './in-theaters/movie/movie.component';
+import { SafeStylePipe } from './in-theaters/movie/safeStyle.pipe';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'intheaters', component: InTheatersComponent },
+    { path: 'intheaters/:id', component: MovieComponent },
   { path: 'ontv', component: OnTvComponent },
   { path: 'users', component: UsersComponent },
 ];
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     UsersComponent,
     AllMoviesComponent,
     AllGenreComponent,
-    MovieComponent
+    MovieComponent,
+    SafeStylePipe
   ],
   imports: [
     BrowserModule,
