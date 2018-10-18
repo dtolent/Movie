@@ -12,6 +12,7 @@ import { Movie } from '../../models/movie.model';
 export class MovieComponent implements OnInit {
 
   movie: Movie = new Movie();
+  id: number;
 
   constructor( private moviesService: MoviesService,
               private activatedRoute: ActivatedRoute ) { }
@@ -20,17 +21,12 @@ export class MovieComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
-
-      this.movieSub = this.moviesService.getMovie(this.id).subscribe((data) => {
-        this.movie=data;
+      this.moviesService.getMovie(this.id).subscribe((data) => {
+      this.movie=data;
       });
     });
 
   }
 
-
-  ngOnDestroy() {
-    this.movieSub.unsubscribe();
-  }
 
 }

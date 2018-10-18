@@ -1,13 +1,23 @@
-<body>
-<h2>Now Playing</h2>
-<div [routerLink]="movie.id" *ngFor="let movie of movies" class="card" style="width:300px;" >
-  <img class="card-img-top" style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
-  <strong><div>{{movie.title}}</div></strong>
-  <div>{{movie.release_date | date:'longDate' }}</div>
+<div class="row-fluid">
+  <div class="span12">
+    <h2>Now Playing</h2>
+    <mat-grid-list cols="4" rowHeight="500px">
+      <mat-grid-tile
+          *ngFor="let movie of movies">
+          <mat-card [routerLink]="movie.id" class="card">
+            <img mat-card-image class="card-img-top" style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title style="color:red;text-align:center;font-weight:bold;">{{movie.title}}</mat-card-title>
+              <mat-card-subtitle style="color:white;text-align:center;">{{movie.release_date | date:'longDate' }}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!-- <mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = $event">
+</mat-paginator> -->
 </div>
-
-
-<!-- <app-movie *ngFor="let movie of movies; let i = index"
-            [index]="i"
-></app-movie> -->
-</body>
+</div>

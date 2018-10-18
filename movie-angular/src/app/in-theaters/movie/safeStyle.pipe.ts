@@ -8,7 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SafeStylePipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
 
-  transform(val: string, ) {
+  transform( val: string ) {
     return this.sanitizer.bypassSecurityTrustStyle(`url('https://image.tmdb.org/t/p/w1280/${val}')`);
   }
 }

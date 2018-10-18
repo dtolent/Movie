@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes,RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { InTheatersComponent } from './in-theaters/in-theaters.component';
@@ -12,6 +13,7 @@ import { AllMoviesComponent } from './in-theaters/all-movies/all-movies.componen
 import { AllGenreComponent } from './in-theaters/all-genre/all-genre.component';
 import { MovieComponent } from './in-theaters/movie/movie.component';
 import { SafeStylePipe } from './in-theaters/movie/safeStyle.pipe';
+import { MaterialModule } from './material';
 
 
 const appRoutes: Routes = [
@@ -38,6 +40,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     RouterModule.forRoot(appRoutes) //register routes for Angular to recognize
   ],
   providers: [],

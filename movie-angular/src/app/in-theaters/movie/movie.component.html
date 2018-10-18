@@ -1,9 +1,9 @@
-<div class="row-fluid">
-  <div class="span6">
-    <div [style.backgroundImage]="movie.backdrop_path | safeStyle" class="bg">
-      <strong><div>{{movie.title}}</div></strong>
-      <div>{{movie.overview}}</div>
-      <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+<!-- <div class="row-fluid">
+  <div class="span12"> -->
+    <div [style.backgroundImage]="movie.backdrop_path | safeStyle" class="bg"></div>
+      <div class="row-fluid">
+        <div class="span12">
+          <strong><h3 class="text-white">{{movie.title}}</h3></strong>
+          <div class="text-white">{{movie.overview}}</div>
+      </div>
     </div>
-  </div>
-</div>

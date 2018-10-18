@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from  '@angular/common/http';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class MoviesService {
   constructor(private httpClient: HttpClient) {}
 
   getNowPlaying(page: number): Observable<any> {
-    return this.httpClient.get(`${this.API_URL}movie/now_playing?api_key=${this.API_KEY}&page=${this.page}`);
+    return this.httpClient.get(`${this.API_URL}movie/now_playing?api_key=${this.API_KEY}&page=${page}`);
   }
 
   getMovie(id: number): Observable<any> {
