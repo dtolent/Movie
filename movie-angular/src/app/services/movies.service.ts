@@ -13,11 +13,21 @@ export class MoviesService {
   constructor(private httpClient: HttpClient) {}
 
   getNowPlaying(page: number): Observable<any> {
-    return this.httpClient.get(`${this.API_URL}movie/now_playing?api_key=${this.API_KEY}&page=${page}`);
+    return this.httpClient.get(`${this.API_URL}movie/now_playing?api_key=${this.API_KEY}&language=en-US&page=${page}`);
+  }
+  getMovieDetails(id: number): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}movie/${id}?api_key=${this.API_KEY}&language=en-US`);
+  }
+  getTVOnAir(page: number): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}tv/on_the_air?api_key=${this.API_KEY}&language=en-US&page=${page}`);
+  }
+  getTVDetails(id: number): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}tv/${id}?api_key=${this.API_KEY}&language=en-US`);
+  }
+  searchMovie(query: string): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}search/movie?api_key=${this.API_KEY}&query=${query}&language=en-US`);
   }
 
-  getMovie(id: number): Observable<any> {
-    return this.httpClient.get(`${this.API_URL}movie/${id}?api_key=${this.API_KEY}`);
-  }
+
 
 }

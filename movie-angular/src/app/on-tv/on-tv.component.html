@@ -1,1 +1,23 @@
-<a href="#">On TV</a>
+<div class="row-fluid">
+  <div class="span12">
+    <h2>On Air</h2>
+    <mat-grid-list cols="4" rowHeight="500px">
+      <mat-grid-tile
+          *ngFor="let tvShow of tvShows">
+          <mat-card [routerLink]="tvShow.id" class="card">
+            <img mat-card-image class="card-img-top" style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{tvShow.poster_path}}">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title style="color:red;text-align:center;font-weight:bold;">{{tvShow.name}}</mat-card-title>
+              <mat-card-subtitle style="color:white;text-align:center;">{{tvShow.first_air_date | date:'longDate' }}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="getTVShows($event)">
+</mat-paginator>
+</div>
+</div>

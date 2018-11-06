@@ -21,7 +21,7 @@ export class MovieComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
-      this.moviesService.getMovie(this.id).subscribe((data) => {
+      this.moviesService.getMovieDetails(this.id).subscribe((data) => {
       this.movie=data;
       });
     });

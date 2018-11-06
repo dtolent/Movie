@@ -14,10 +14,10 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-    <!-- <mat-paginator [length]="length"
-              [pageSize]="pageSize"
-              [pageSizeOptions]="pageSizeOptions"
-              (page)="pageEvent = $event">
-</mat-paginator> -->
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="getMovies($event)">
+    </mat-paginator>
 </div>
 </div>

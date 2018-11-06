@@ -4,3 +4,7 @@ body, .card{
 h2, div{
   color: red;
 }
+mat-paginator{
+    background-color: black;
+    color: red;
+}
