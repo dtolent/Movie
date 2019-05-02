@@ -8,9 +8,9 @@ export class FormService{
     private movies: Array<any> = [];
     private searchString: String;
 
-    setData(data:string){
-        this.movies = data;
-        console.log(this.movies);
+    setData(data:any){
+        this.searchString = data;
+        console.log(this.searchString);
     }
 
     getData():Array<any>{

@@ -8,3 +8,6 @@ mat-paginator{
     background-color: black;
     color: red;
 }
+.row-fluid {
+margin: 5% 5% 0 5%;
+}

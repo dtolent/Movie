@@ -16,7 +16,10 @@ export class MoviesService {
     return this.httpClient.get(`${this.API_URL}movie/now_playing?api_key=${this.API_KEY}&language=en-US&page=${page}`);
   }
   getMovieDetails(id: number): Observable<any> {
-    return this.httpClient.get(`${this.API_URL}movie/${id}?api_key=${this.API_KEY}&language=en-US`);
+    return this.httpClient.get(`${this.API_URL}movie/${id}?api_key=${this.API_KEY}&append_to_response=videos&language=en-US`);
+  }
+  getMovieCredits(id:number): Observable<any> {
+    return this.httpClient.get(`${this.API_URL}movie/${id}/credits?api_key=${this.API_KEY}&language=en-US`);
   }
   getTVOnAir(page: number): Observable<any> {
     return this.httpClient.get(`${this.API_URL}tv/on_the_air?api_key=${this.API_KEY}&language=en-US&page=${page}`);

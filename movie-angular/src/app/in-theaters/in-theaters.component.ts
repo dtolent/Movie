@@ -29,17 +29,24 @@ export class InTheatersComponent implements OnInit, DoCheck {
     this.getMovies();
   }
   ngDoCheck() {
-      if (this.formService.getData()) {
-          this.movies = this.formService.getData();
-      }
-      else {
-          this.getMovies();
-      }
+      // if (this.formService.getData()) {
+      //     this.movies = this.formService.getData();
+      // }
+      // else {
+      //     this.getMovies();
+      // }
     }
 
-  public getMovies(pageData: PageEvent) {
+  // public getMovies(pageData: PageEvent) {
+  //   //TODO! make this work on search results
+  //   this.moviesService.getNowPlaying( pageData ? pageData.pageIndex + 1 : 1 ).subscribe((data: any) => {
+  //   this.movies = data.results;
+  //   console.log(data.results);
+  //   });
+  // }
+  public getMovies() {
     //TODO! make this work on search results
-    this.moviesService.getNowPlaying( pageData ? pageData.pageIndex + 1 : 1 ).subscribe((data: any) => {
+    this.moviesService.getNowPlaying(  1 ).subscribe((data: any) => {
     this.movies = data.results;
     console.log(data.results);
     });

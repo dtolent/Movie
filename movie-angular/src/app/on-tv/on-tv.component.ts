@@ -23,8 +23,14 @@ export class OnTvComponent implements OnInit {
     this.getTVShows();
   }
 
-  public getTVShows(pageData: PageEvent) {
-    this.tvService.getTVOnAir(pageData).subscribe((data: any) => {
+  // public getTVShows(pageData: PageEvent) {
+  //   this.tvService.getTVOnAir(pageData).subscribe((data: any) => {
+  //   this.tvShows = data.results;
+  //   console.log(data.results);
+  //   });
+  // }
+  public getTVShows() {
+    this.tvService.getTVOnAir(1).subscribe((data: any) => {
     this.tvShows = data.results;
     console.log(data.results);
     });

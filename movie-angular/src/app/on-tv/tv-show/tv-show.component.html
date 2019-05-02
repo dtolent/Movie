@@ -1,8 +1,40 @@
-<div [style.backgroundImage]="tvShow.backdrop_path | safeStyle" class="bg">
+<!-- <div [style.backgroundImage]="tvShow.backdrop_path | safeStyle" class="bg">
   <div class="row-fluid">
     <div class="span12">
       <strong><h3 class="text-white">{{tvShow.name}}</h3></strong>
       <div class="text-white">{{tvShow.overview}}</div>
   </div>
 </div>
+</div> -->
+<div class="container">
+    <div><mat-icon (click)="goBack()" class="back-btn" >navigate_before</mat-icon></div>
+    <div [style.backgroundImage]="tvShow.backdrop_path | safeStyle" class="bg"></div>
+    <div class="container-2">
+      <h3 class="show-title">{{tvShow.title}}</h3>
+    </div>
+    <br>
+    <!-- <div class="container-2">
+      <div class="tagline">{{movie.tagline}}</div>
+    </div> -->
+    <br><br>
+    <div class="container-2 movie-desc">
+      <div><mat-icon class="ratings">grade</mat-icon> {{tvShow.vote_average}}</div>
+      <div><mat-icon class="reviews">person</mat-icon>{{tvShow.vote_count}}</div>
+      <div><mat-icon class="movie-length">movie</mat-icon>{{tvShow.runtime}}mins</div>
+    </div>
+    <!-- <div class="container-2 genres">
+      <ul>
+        <li *ngFor = "let genre of movie.genres" class="text-white movie-genre">
+          <a *ngIf="movie.genres"> {{genre.name}}  </a>
+        </li>
+      </ul>
+    </div> -->
+    <br><br>
+    <div class="container-2 movie-details">
+      <div class="overview">{{tvShow.overview}}</div>
+    </div>
+</div>
+<div class="container">
+  <div id="trailer"><h1>Trailer</h1></div>
+  <youtube-player [videoId]="trailer.key" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
 </div>

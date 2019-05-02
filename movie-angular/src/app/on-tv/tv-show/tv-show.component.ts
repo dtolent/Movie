@@ -14,6 +14,8 @@ export class TvShowComponent implements OnInit {
 
   tvShow: Movie = new Movie();
   id: number;
+  player: YT.Player;
+  trailer: Array<any>;
 
   constructor( private tvShowService: MoviesService,
               private activatedRoute: ActivatedRoute ) { }
@@ -24,6 +26,7 @@ export class TvShowComponent implements OnInit {
       this.tvShowService.getTVDetails(this.id).subscribe((data) => {
       this.tvShow=data;
       console.log(this.tvShow);
+      this.trailer = data.videos.results[0];
       });
     });
   }

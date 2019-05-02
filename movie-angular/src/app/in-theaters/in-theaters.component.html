@@ -1,6 +1,7 @@
 <div class="row-fluid">
-  <div class="span12">
+  <div class="span10">
     <h2>Now Playing</h2>
+
     <mat-grid-list cols="4" rowHeight="500px">
       <mat-grid-tile
           *ngFor="let movie of movies">
@@ -14,10 +15,5 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-    <mat-paginator [length]="length"
-                   [pageSize]="pageSize"
-                   [pageSizeOptions]="pageSizeOptions"
-                   (page)="getMovies($event)">
-    </mat-paginator>
-</div>
+  </div>
 </div>
