@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { MoviesService } from '../../services/movies.service';
 import { Movie } from '../../models/movie.model';
@@ -18,7 +19,8 @@ export class TvShowComponent implements OnInit {
   trailer: Array<any>;
 
   constructor( private tvShowService: MoviesService,
-              private activatedRoute: ActivatedRoute ) { }
+              private activatedRoute: ActivatedRoute,
+             private location: Location ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -27,8 +29,11 @@ export class TvShowComponent implements OnInit {
       this.tvShow=data;
       console.log(this.tvShow);
       this.trailer = data.videos.results[0];
+      console.log(data.videos.results[0]);
       });
     });
   }
-
+  public goBack(): void {
+    this.location.back();
+  }
 }

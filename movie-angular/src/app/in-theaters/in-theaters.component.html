@@ -6,7 +6,7 @@
       <mat-grid-tile
           *ngFor="let movie of movies">
           <mat-card [routerLink]="movie.id" class="card">
-            <img mat-card-image class="card-img-top" style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+            <img mat-card-image class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title style="color:red;text-align:center;font-weight:bold;">{{movie.title}}</mat-card-title>

@@ -5,7 +5,7 @@
       <mat-grid-tile
           *ngFor="let tvShow of tvShows">
           <mat-card [routerLink]="tvShow.id" class="card">
-            <img mat-card-image class="card-img-top" style="height:300px;" src="https://image.tmdb.org/t/p/w500/{{tvShow.poster_path}}">
+            <img mat-card-image class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{tvShow.poster_path}}">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title style="color:red;text-align:center;font-weight:bold;">{{tvShow.name}}</mat-card-title>

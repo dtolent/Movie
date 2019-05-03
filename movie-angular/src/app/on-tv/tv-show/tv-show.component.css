@@ -1,45 +1,29 @@
 .bg {
-  min-height: 60vh;
+  min-height: 85vh;
   background: center no-repeat;
   background-size: cover;
 
 }
-.back-btn, .movie-title {
+.back-btn, .show-title {
   color: white;
-  font-size: 70px;
+  font-size: 40px;
   margin-bottom: 0;
 }
-.back-btn {
-  flex-grow: 1;
-  justify-content: flex-start;
-}
-.movie-title{
-  flex-grow: 8;
-}
-.movie-desc{
-  font-size: 20px;
-  align-content: space-between;
-}
-.container{
-  display: flex;
-  flex-direction: column;
+.back-btn:hover {
+  cursor: pointer;
 }
 .container-2{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-div, a, .back-btn{
+div, a{
   color: white;
-}
-.tagline{
-  font-size: 20px;
-  font-style: italic;;
 }
 .ratings {
   color: yellow;
 }
-.movie-length {
+.show-length {
   color:red;
 }
 .genres > ul{

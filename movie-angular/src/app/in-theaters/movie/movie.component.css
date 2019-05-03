@@ -1,5 +1,5 @@
 .bg {
-  min-height: 100vh;
+  min-height: 85vh;
   background: center no-repeat;
   background-size: cover;
 }
@@ -11,6 +11,9 @@
 .back-btn {
   flex-grow: 1;
   justify-content: flex-start;
+}
+.back-btn:hover {
+  cursor: pointer;
 }
 .container-fluid {
   padding-left: 0px;
@@ -29,7 +32,7 @@
   flex-direction: row;
   align-items: center;
 }
-div, a, .back-btn{
+div, a {
   color: white;
 }
 .tagline{
