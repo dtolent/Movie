@@ -1,7 +1,7 @@
 # Movie
-This is a project that is being built using Angular and Angular Material. The purpose of this project is to help the user
-find popular and highly-rated movies and TV shows. It displays a list of movies or shows and pulls up a detailed information once
-the user makes a selection. It uses API from the themoviedb.org.
+This project uses Angular and Angular Material. It's purpose is to help the user
+find popular and highly-rated movies and TV shows. The user can browse on the list of movies or shows and make a selection
+to view detailed information. The app uses API from the themoviedb.org.
 
 In progress:  
 1)list page  
